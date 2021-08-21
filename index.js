@@ -1,3 +1,14 @@
+//To Make sure that this app works with your local node js server
+// Uncomment the line below
+// let server_Location = "http://localhost:3000/schedule"; 
+
+//Also make sure that you comment out the line below
+let server_Location = "https://lzcfgr.deta.dev/schedule";
+//
+//
+
+
+
 let email = document.getElementById('email');
 let source = document.getElementById('source');
 let destination = document.getElementById('destination');
@@ -5,7 +16,6 @@ let time = document.getElementById('time');
 let submit = document.getElementById('submit');
 let footer = document.getElementById('footer');
  let error_Message;
-
 
 
 function submitter() {
@@ -51,7 +61,7 @@ function submitter() {
   }
  
 
-  fetch("https://lzcfgr.deta.dev/schedule", {
+  fetch(server_Location, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
